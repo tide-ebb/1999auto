@@ -134,7 +134,7 @@ def manor():
     pa.click(840, 890, 5, 0.7)
     time.sleep(1)
 
-    pa.click(button='./pic/middle')
+    pa.click(button='middle')
     time.sleep(1)
 
     click_on_image('./pic/production.png')
@@ -434,6 +434,7 @@ def record_player():
     var = "唱片机"
     label.config(text="正在进行： " + f"{var}")
     # 进入
+    time.sleep(2)
     pa.click(button='right')
     time.sleep(2)
     #领取
