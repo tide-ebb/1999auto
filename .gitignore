@@ -7,3 +7,5 @@ __pycache__/
 pic/desktop.ini
 # 忽略临时文件
 *.tmp
+test.py
+temp.py
