@@ -1,0 +1,9 @@
+# 忽略 IDE 配置文件（PyCharm 等）
+.idea/
+# 忽略 Python 缓存文件
+__pycache__/
+*.pyc
+# 忽略 Windows 系统自动生成的文件
+pic/desktop.ini
+# 忽略临时文件
+*.tmp
