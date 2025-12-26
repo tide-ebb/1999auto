@@ -428,59 +428,103 @@ def playing():
     label.config(text="正在进行： " + f"{var}")
 
 
-#窗口
+# #窗口
+#
+#
+# root = tk.Tk()
+# root.title("重返未来：1999 日常自动")
+# root.geometry("400x550+1510+90")
+#
+#
+#
+# #变量
+# var = " "
+#
+# # def v():
+# #     global var
+# #     var = "v"
+# #     label.config(text="正在进行： "+f"{var}")
+#
+# label = tk.Label(root, text="正在进行： "+f"{var}", font=("Arial", 14))
+# label.pack(pady=20)
+#
+#
+# # b0 = tk.Button(root,text='Start',width=20,height=3,command=Start)
+# # b0.pack()
+#
+# b1 = tk.Button(root, text="Play", width=20, height=3, command=play)
+# b1.pack()
+#
+# b2 = tk.Button(root, text="Playing", width=20, height=3, command=playing)
+# b2.pack()
+#
+# # b3 = tk.Button(root,text='manor',width=20,height=3,command=manor)
+# # b3.pack()
+# #
+# # b4 = tk.Button(root,text='xinxiang',width=20,height=3,command=xinxiang)
+# # b4.pack()
+#
+# b5 = tk.Button(root,text='materials_re',width=20,height=3,command=materials_re)
+# b5.pack()
+#
+# b6 = tk.Button(root,text="421",width=20, height=3, command=chapter4act21)
+# b6.pack()
+#
+# # 进入消息循环
+# root.mainloop()
 
 
+#备份
+#UI窗口
 root = tk.Tk()
 root.title("重返未来：1999 日常自动")
 root.geometry("400x550+1510+90")
 
 
+selected_modules = {
+                    "manor": tk.BooleanVar(),
+                    "xinxiang": tk.BooleanVar(),
+                    "gold": tk.BooleanVar(),
+                    "mote": tk.BooleanVar(),
+                    #"421": tk.BooleanVar(),
+                    "act": tk.BooleanVar(),
+                    "record_player": tk.BooleanVar(),
+                    "task":tk.BooleanVar(),
+                    "gold_re": tk.BooleanVar(),
+                    "mote_re": tk.BooleanVar(),
+                    }
 
-#变量
-var = " "
-
-# def v():
-#     global var
-#     var = "v"
-#     label.config(text="正在进行： "+f"{var}")
+# 标签刷新
+def v(name):
+    var = name
+    label.config(text=f"正在进行： {var}")
+    root.update()
 
 
+# 模块选择
+tk.Checkbutton(root, text="荒原", variable=selected_modules["manor"]).pack()
+tk.Checkbutton(root, text="心相", variable=selected_modules["xinxiang"]).pack()
+tk.Checkbutton(root,text="金币",variable=selected_modules["gold"]).pack()
+tk.Checkbutton(root,text="微尘",variable=selected_modules["mote"]).pack()
+tk.Checkbutton(root,text="活动",variable=selected_modules["act"]).pack()
+#tk.Checkbutton(root,text="421",variable=selected_modules["421"]).pack()
+tk.Checkbutton(root, text="唱片机", variable=selected_modules["record_player"]).pack()
+tk.Checkbutton(root, text="任务", variable=selected_modules["task"]).pack()
+tk.Checkbutton(root,text="金币循环",variable=selected_modules["gold_re"]).pack()
+tk.Checkbutton(root,text="微尘循环",variable=selected_modules["mote_re"]).pack()
 
 
-label = tk.Label(root, text="正在进行： "+f"{var}", font=("Arial", 14))
+#标签
+label = tk.Label(root, text=' ', font=("Arial", 14))
 label.pack(pady=20)
 
 
-
-# b0 = tk.Button(root,text='Start',width=20,height=3,command=Start)
-# b0.pack()
-
-b1 = tk.Button(root, text="Play", width=20, height=3, command=play)
-b1.pack()
-
-b2 = tk.Button(root, text="Playing", width=20, height=3, command=playing)
-b2.pack()
-
-# b3 = tk.Button(root,text='manor',width=20,height=3,command=manor)
-# b3.pack()
-#
-# b4 = tk.Button(root,text='xinxiang',width=20,height=3,command=xinxiang)
-# b4.pack()
-
-b5 = tk.Button(root,text='materials_re',width=20,height=3,command=materials_re)
-b5.pack()
-
-b6 = tk.Button(root,text="421",width=20, height=3, command=chapter4act21)
-b6.pack()
-
-
+#按钮
+b7 = tk.Button(root, text="开始执行", width=20, height=3, command=lambda: start_select(selected_modules))
+b7.pack()
 
 
 # 进入消息循环
 root.mainloop()
-
-
-
 
 
